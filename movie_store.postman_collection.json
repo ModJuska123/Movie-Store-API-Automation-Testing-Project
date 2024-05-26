@@ -1,117 +1,24 @@
 {
 	"info": {
-		"_postman_id": "86ce92fb-530a-4184-aa2f-cc1aa98a6cad",
-		"name": "Movie_Store",
+		"_postman_id": "35821e56-4c76-4500-bdf8-83c38e91e437",
+		"name": "Performance Testing",
+		"description": "# About this collection\n\nThis collection is designed to help you test the performance of your API endpoints with varying sizes of query parameters. The collection contains pre-built requests that simulate large and small query parameters to assess how well your API handles different loads.\n\nUsing this collection, you can identify potential bottlenecks or performance issues in your API, enabling you to optimize and enhance the overall performance.\n\n## **Using the collection**\n\n**Step 1:** Replace the placeholders in the URLs and parameters with your own API base URLs and relevant query parameters.\n\n**Step 2 (optional):** Modify the sizes of the query parameters to reflect your specific use case better. You can create multiple requests with varying parameter sizes to test your API's performance thoroughly.\n\n**Step 3:** Run the collection using Postman's Collection Runner or Postman's Newman CLI tool.\n\n**Step 4:** Analyze the results to identify performance bottlenecks, slow response times, or potential issues with handling large or small query parameters.\n\n## Resources\n\n[Performance Testing](https://learning.postman.com/docs/designing-and-developing-your-api/testing-your-api/introduction-to-performance-testing/)  \n[Postman Collection Runner](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)  \n[Postman Newman CLI](https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/)\n\n[  \n](https://postman.postman.co/documentation/22517504-3302192d-87dd-4612-b381-61894de21203?entity=&branch=&version=)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "34663841"
 	},
 	"item": [
 		{
-			"name": "PostMovie",
+			"name": "Large Query Params",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"",
-							"",
-							"pm.test(\"Response status code is 201\", function () {",
-							"    pm.expect(pm.response.code).to.equal(201);",
-							"});",
-							"",
-							"",
-							"pm.test(\"Response is an object\", function () {",
-							"    const responseData = pm.response.json();",
-							"    ",
-							"    pm.expect(responseData).to.be.an('object');",
-							"});",
-							"",
-							"",
-							"pm.test(\"Response has the required fields\", function () {",
-							"  const responseData = pm.response.json();",
-							"  ",
-							"  pm.expect(responseData).to.be.an('object');",
-							"  pm.expect(responseData).to.have.property('id');",
-							"  pm.expect(responseData).to.have.property('title');",
-							"  pm.expect(responseData).to.have.property('productionDate');",
-							"  pm.expect(responseData).to.have.property('producer');",
-							"  pm.expect(responseData).to.have.property('rating');",
-							"});",
-							"",
-							"",
-							"pm.test(\"Title is a non-empty string\", function () {",
-							"    const responseData = pm.response.json();",
-							"    ",
-							"    pm.expect(responseData).to.be.an('object');",
-							"    pm.expect(responseData.title).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Title should not be empty\");",
-							"});",
-							"",
-							"",
-							"pm.test(\"Production date, producer, and rating are in the expected format and values\", function () {",
-							"  const responseData = pm.response.json();",
-							"  ",
-							"  pm.expect(responseData).to.be.an('object');",
-							"  pm.expect(responseData.productionDate).to.be.a('string').and.to.not.be.empty;",
-							"  pm.expect(responseData.producer).to.be.a('string').and.to.not.be.empty;",
-							"  pm.expect(responseData.rating).to.be.a('number').and.to.be.at.least(0);",
-							"});",
-							"",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"title\": \"Inception\",\r\n  \"productionDate\": \"2010-07-16\",\r\n  \"producer\": \"Emma Thomas\",\r\n  \"rating\": 8.8\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/movies",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"movies"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GetMovies",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Response status code is 200\", function () {",
-							"    pm.expect(pm.response.code).to.equal(200);",
-							"});",
-							"",
-							"",
-							"pm.test(\"Response has the required Content-Type header set to application/json\", function () {",
-							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
-							"});",
-							"",
-							"",
-							"pm.test(\"Response time is less than 200ms\", function () {",
-							"  pm.expect(pm.response.responseTime).to.be.below(200);",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
 							"});"
 						],
-						"type": "text/javascript",
-						"packages": {}
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -119,263 +26,702 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/movies",
-					"protocol": "http",
+					"raw": "https://postman-echo.com/get?foo1=bar1&foo2=bar2&foo2=bar2&foo3=bar3&foo4=bar4&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10&foo5=bar5&foo6=bar6&foo7=bar7&foo8=bar8&foo9=bar9&foo10=bar10",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"postman-echo",
+						"com"
 					],
-					"port": "3000",
 					"path": [
-						"movies"
+						"get"
+					],
+					"query": [
+						{
+							"key": "foo1",
+							"value": "bar1"
+						},
+						{
+							"key": "foo2",
+							"value": "bar2"
+						},
+						{
+							"key": "foo2",
+							"value": "bar2"
+						},
+						{
+							"key": "foo3",
+							"value": "bar3"
+						},
+						{
+							"key": "foo4",
+							"value": "bar4"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						},
+						{
+							"key": "foo5",
+							"value": "bar5"
+						},
+						{
+							"key": "foo6",
+							"value": "bar6"
+						},
+						{
+							"key": "foo7",
+							"value": "bar7"
+						},
+						{
+							"key": "foo8",
+							"value": "bar8"
+						},
+						{
+							"key": "foo9",
+							"value": "bar9"
+						},
+						{
+							"key": "foo10",
+							"value": "bar10"
+						}
 					]
-				}
+				},
+				"description": "**Description  \n**This request is designed to test an API endpoint with a large set of query parameters. By sending this request, you can assess how well your API handles complex requests and analyze its response times and performance under a significant load.\n\n**Request details  \n**URL: [https://postman-echo.com/get](https://postman-echo.com/get)  \nHTTP Method: GET  \nQuery Parameters: Multiple instances of foo1 through foo10 with varying values of \"bar\"\n\n**Usage**  \nTo use this request, simply replace the URL with your own API endpoint and modify the query parameters according to your requirements."
 			},
 			"response": []
 		},
 		{
-			"name": "GetMovieById",
+			"name": "Small Query Params",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Response time is less than 200ms\", function () {",
-							"  pm.expect(pm.response.responseTime).to.be.below(200);",
-							"});",
-							""
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});"
 						],
-						"type": "text/javascript",
-						"packages": {}
+						"type": "text/javascript"
 					}
 				}
 			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:3000/movies/1",
-					"protocol": "http",
+					"raw": "https://postman-echo.com/get?foo1=bar1&foo2=bar2",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"postman-echo",
+						"com"
 					],
-					"port": "3000",
 					"path": [
-						"movies",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "TestAPI",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Response status code is 200\", function () {\r",
-							"  pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Response time is less than 300ms\", function () {\r",
-							"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Each movie in the array has valid properties\", function () {\r",
-							"  var movies = pm.response.json();\r",
-							"  movies.forEach(function(movie) {\r",
-							"    pm.expect(movie).to.be.an('object').and.to.have.property('id');\r",
-							"  });\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Response is an array\", function () {\r",
-							"  pm.expect(pm.response.json()).to.be.an('array');\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Each movie in the array has a productionDate of '2010-07-16'\", function () {\r",
-							"  pm.response.json().forEach(function(movie) {\r",
-							"    pm.expect(movie.productionDate).to.equal('2010-07-16');\r",
-							"  });\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Each movie in the array has a producer of 'Emma Thomas'\", function () {\r",
-							"  pm.response.json().forEach(function(movie) {\r",
-							"    pm.expect(movie.producer).to.equal('Emma Thomas');\r",
-							"  });\r",
-							"\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Each movie in the array has a rating of 8.8\", function () {\r",
-							"  pm.response.json().forEach(function(movie) {\r",
-							"    pm.expect(movie.rating).to.equal(8.8);\r",
-							"  });\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"title\": \"Inception\",\r\n  \"productionDate\": \"2010-07-16\",\r\n  \"producer\": \"Emma Thomas\",\r\n  \"rating\": 8.8\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+						"get"
+					],
+					"query": [
+						{
+							"key": "foo1",
+							"value": "bar1"
+						},
+						{
+							"key": "foo2",
+							"value": "bar2"
 						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/movies",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"movies"
 					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DeleteById",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Response status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"title\": \"Inception\",\r\n  \"productionDate\": \"2010-07-16\",\r\n  \"producer\": \"Emma Thomas\",\r\n  \"rating\": 8.8\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
 				},
-				"url": {
-					"raw": "http://localhost:3000/movies/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"movies",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GetMovieDeleted",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Response status code is 200\", function () {",
-							"    pm.expect(pm.response.to.have.status(200));",
-							"});",
-							"",
-							"",
-							"pm.test(\"Content-Type header is application/json\", function () {",
-							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
-							"});",
-							"",
-							"",
-							"pm.test(\"Response time is less than 200ms\", function () {",
-							"  pm.expect(pm.response.responseTime).to.be.below(200);",
-							"});",
-							"",
-							"",
-							"pm.test(\"Validate the required fields in the response\", function () {",
-							"    const responseData = pm.response.json();",
-							"    ",
-							"    pm.expect(responseData).to.be.an('array');",
-							"    responseData.forEach(movie => {",
-							"        pm.expect(movie).to.have.property('id');",
-							"        pm.expect(movie).to.have.property('title');",
-							"        pm.expect(movie).to.have.property('productionDate');",
-							"        pm.expect(movie).to.have.property('producer');",
-							"        pm.expect(movie).to.have.property('rating');",
-							"    });",
-							"});",
-							"",
-							"",
-							"pm.test(\"Response time is less than 200ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(200);",
-							"});",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"title\": \"Inception\",\r\n  \"productionDate\": \"2010-07-16\",\r\n  \"producer\": \"Emma Thomas\",\r\n  \"rating\": 8.8\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/movies",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"movies"
-					]
-				}
+				"description": "**Description**  \nThis request is designed to test an API endpoint with a small set of query parameters. By sending this request, you can assess how well your API handles simple requests and analyze its response times and performance under a minimal load.\n\n**Request details**  \nURL: [https://postman-echo.com/get](https://postman-echo.com/get)  \nHTTP Method: GET  \nQuery Parameters:\n\n- foo1: bar1\n- foo2: bar2\n    \n\n**Usage**  \nTo use this request, simply replace the URL with your own API endpoint and modify the query parameters according to your requirements."
 			},
 			"response": []
 		}
