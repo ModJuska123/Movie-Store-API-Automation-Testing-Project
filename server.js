@@ -30,7 +30,7 @@ app.get('/movies/:id', (req, res) => {
 });
 
 // Update a movie's rating by ID
-app.put('/movies/:id/rating', (req, res) => {
+app.put('/movies/:id', (req, res) => {
   const { rating } = req.body;
   if (typeof rating !== 'number') {
     return res.status(400).send('Invalid rating');
