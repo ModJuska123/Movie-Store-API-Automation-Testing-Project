@@ -12,11 +12,3 @@ Movie can have a title, production-date, producer and rating
 
 Inspiration:
 https://github.com/JauniusPinelis/postman-testing-pipelines
-
-testing workflow:
-1 try: nothing
-2 try: 
-3 try: 
-
-6 try
-9. new proj
