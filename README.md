@@ -43,7 +43,7 @@ To start and testing the application:
 
     npm run dev
 
-    npm run test.
+    npm run test
 
 ## Automated Testing with Newman
 
