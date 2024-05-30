@@ -41,9 +41,9 @@ Before you begin, ensure you have the following installed on your system:
 
 To start and testing the application:
 
-npm run dev
+    npm run dev
 
-npm run test
+    npm run test.
 
 ## Automated Testing with Newman
 
