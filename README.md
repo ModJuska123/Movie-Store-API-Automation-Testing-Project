@@ -19,6 +19,7 @@ git clone https://github.com/ModJuska123/Movie-Store-API-Automation-Testing-Proj
 
 2. Navigate to the project directory:
 
+```bash
 cd Movie-Store-API-Automation-Testing-Project
 
 
