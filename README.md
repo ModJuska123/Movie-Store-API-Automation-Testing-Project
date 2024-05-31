@@ -1,4 +1,4 @@
-## Movie-Store-API-Automation-Testing-Project
+🎬## Movie-Store-API-Automation-Testing-Project
 
 Welcome to the My Node.js Application! This project is designed as a simple Node.js application with implemented GitHub workflow, tests developed in Postman, Newman running a collection. Below you'll find instructions for setting up and running the project, using Postman for API testing, Newman for automated tests, and details on the GitHub workflow for CI/CD.
 
