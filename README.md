@@ -1,4 +1,9 @@
-# 🎬 Movie-Store-API-Automation-Testing-Project
+
+Sure! Here is the enhanced version of your README file with proper syntax for easy copying and pasting:
+
+markdown
+Copy code
+# 🎬 Movie-Store-API-Automation-Testing-Project 🎥
 
 ![Movie](https://i.imgur.com/eBRfD9N.png)
 
@@ -16,20 +21,27 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/ModJuska123/Movie-Store-API-Automation-Testing-Project
-
 Navigate to the project directory:
+
+bash
+Copy code
 cd Movie-Store-API-Automation-Testing-Project
-
 Install the dependencies:
-npm install -y
 
+bash
+Copy code
+npm install -y
 🚀 Running the Application
 To start the application:
+
+bash
+Copy code
 npm run dev
-
 To test the application:
-npm run test
 
+bash
+Copy code
+npm run test
 🧪 Using Postman
 
 Postman is used for API testing in this project. Make sure to have Postman installed on your system to run and manage your API tests effectively.
@@ -43,4 +55,13 @@ It installs dependencies, runs tests, and lints the code.
 Happy Testing! 🎉
 
 
+sql
+Copy code
+
 You can copy and paste the above markdown into your README file. The images and sections are formatted to make the document visually appealing and easy to read.
+
+
+
+
+
+
