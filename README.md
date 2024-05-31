@@ -8,6 +8,7 @@ Welcome to the My Node.js Application! This project is designed as a simple Node
 2. GitHub Workflow
 
 ### 1. Installation
+
 1.1. Clone the repository:
 ```
 git clone https://github.com/ModJuska123/Movie-Store-API-Automation-Testing-Project
@@ -17,16 +18,19 @@ git clone https://github.com/ModJuska123/Movie-Store-API-Automation-Testing-Proj
 ```
 cd your-repo-name
 ```
+
 1.3. Install the dependencies:
 ```
 npm install -y
 ```
+
 2. Running the Application
 
 2.1. To start application:
 ```
 npm run dev
 ```
+
 2.2. Testing the application:
 ```
 npm run test
