@@ -12,7 +12,15 @@ Welcome to the My Node.js Application! This project is designed as a simple Node
 
 ## 🛠 Installation
 
-Clone the repository:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/ModJuska123/Movie-Store-API-Automation-Testing-Project
+
+2. Navigate to the project directory:
+
+cd Movie-Store-API-Automation-Testing-Project
+
+
+3. Install the dependencies:
+
