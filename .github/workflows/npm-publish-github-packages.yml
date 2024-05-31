@@ -30,27 +30,3 @@ jobs:
 
       - name: Run tests
         run: npm test
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Publish package (to local directory)
-        run: |
-          mkdir -p /tmp/npm-local
-          npm pack
-          mv *.tgz /tmp/npm-local/
