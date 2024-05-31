@@ -24,7 +24,7 @@ cd your-repo-name
 npm install -y
 ```
 
-2. Running the Application
+### 2. Running the Application
 
 2.1. To start application:
 ```
@@ -36,7 +36,7 @@ npm run dev
 npm run test
 ```
 
-3. GitHub Workflow
+### 3. GitHub Workflow
 This project uses GitHub Actions for CI/CD. The workflow is defined in .github/workflows/node.js.yml. Here’s a brief overview:
 
 Node.js CI: This workflow runs on push and pull request events to the main branch.
