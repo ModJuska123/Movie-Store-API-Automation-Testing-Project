@@ -9,7 +9,7 @@ Welcome to the My Node.js Application! This project is designed as a simple Node
 
 ### Installation
 Clone the repository:
-
+```
 git clone https://github.com/ModJuska123/Movie-Store-API-Automation-Testing-Project
 
 Navigate to the project directory:
