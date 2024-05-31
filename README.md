@@ -1,5 +1,3 @@
-Certainly! Here's the corrected README file with proper formatting for GitHub:
-
 markdown
 Copy code
 # 🎬 Movie-Store-API-Automation-Testing-Project 🎥
