@@ -12,7 +12,7 @@ Welcome to the My Node.js Application! This project is designed as a simple Node
 
 1. Clone the repository:
 
-```git clone https://github.com/ModJuska123/Movie-Store-API-Automation-Testing-Project```
+    git clone https://github.com/ModJuska123/Movie-Store-API-Automation-Testing-Project
     
 
 2. Navigate to the project directory:
@@ -23,33 +23,17 @@ Welcome to the My Node.js Application! This project is designed as a simple Node
 
 3. Install the dependencies:
 
-    
-    npm install
-    
-
+    npm install -y
+   
 ## Running the Application
 
-To start and testing the application:
+1. To start application:
 
     npm run dev
 
+2. Testing the application:
+   
     npm run test
-
-## Automated Testing with Newman
-
-Newman allows you to run Postman collections from the command line. Follow these steps to run automated tests:
-
-1. Install Newman globally:
-
-    
-    npm install -g newman
-    
-
-2. Run the Postman collection with Newman:
-
-    
-    newman run postman/collection.json -e postman/environment.json
-    
 
 ## GitHub Workflow
 
