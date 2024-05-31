@@ -1,52 +1,18 @@
-🎬 Movie-Store-API-Automation-Testing-Project 🎥
+# 🎬 Movie-Store-API-Automation-Testing-Project 🎥
+
+![Movie](https://i.imgur.com/eBRfD9N.png)
 
 Welcome to the My Node.js Application! This project is designed as a simple Node.js application with implemented GitHub workflow, tests developed in Postman, Newman running a collection. Below you'll find instructions for setting up and running the project, using Postman for API testing, Newman for automated tests, and details on the GitHub workflow for CI/CD.
 
-Sure! Here's an enhanced version of your README file with a nicer format and cute pictures:
+## 📑 Table of Contents
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [Using Postman](#using-postman)
+- [GitHub Workflow](#github-workflow)
 
-🎬 Movie-Store-API-Automation-Testing-Project 🎥
+## 🛠 Installation
 
-Welcome to the My Node.js Application! This project is designed as a simple Node.js application with implemented GitHub workflow, tests developed in Postman, Newman running a collection. Below you'll find instructions for setting up and running the project, using Postman for API testing, Newman for automated tests, and details on the GitHub workflow for CI/CD.
-
-📑 Table of Contents
-Installation
-Running the Application
-Using Postman
-GitHub Workflow
-🛠 Installation
 Clone the repository:
-bash
-Copy code
+
+```bash
 git clone https://github.com/ModJuska123/Movie-Store-API-Automation-Testing-Project
-Navigate to the project directory:
-
-bash
-Copy code
-cd Movie-Store-API-Automation-Testing-Project
-Install the dependencies:
-
-bash
-Copy code
-npm install -y
-🚀 Running the Application
-To start the application:
-
-bash
-Copy code
-npm run dev
-To test the application:
-
-bash
-Copy code
-npm run test
-🧪 Using Postman
-
-Postman is used for API testing in this project. Make sure to have Postman installed on your system to run and manage your API tests effectively.
-
-🔄 GitHub Workflow
-
-This project uses GitHub Actions for CI/CD. The workflow is defined in .github/workflows/node.js.yml. Here’s a brief overview:
-
-Node.js CI: This workflow runs on push and pull request events to the main branch.
-It installs dependencies, runs tests, and lints the code.
-Happy Testing! 🎉
