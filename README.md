@@ -1,4 +1,4 @@
-# 🎬 Movie-Store-API-Automation-Testing-Project 🎥
+# 🎬 Movie-Store-API-Automation-Testing-Project
 
 ![Movie](https://i.imgur.com/eBRfD9N.png)
 
@@ -16,3 +16,31 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/ModJuska123/Movie-Store-API-Automation-Testing-Project
+
+Navigate to the project directory:
+cd Movie-Store-API-Automation-Testing-Project
+
+Install the dependencies:
+npm install -y
+
+🚀 Running the Application
+To start the application:
+npm run dev
+
+To test the application:
+npm run test
+
+🧪 Using Postman
+
+Postman is used for API testing in this project. Make sure to have Postman installed on your system to run and manage your API tests effectively.
+
+🔄 GitHub Workflow
+
+This project uses GitHub Actions for CI/CD. The workflow is defined in .github/workflows/node.js.yml. Here’s a brief overview:
+
+Node.js CI: This workflow runs on push and pull request events to the main branch.
+It installs dependencies, runs tests, and lints the code.
+Happy Testing! 🎉
+
+
+You can copy and paste the above markdown into your README file. The images and sections are formatted to make the document visually appealing and easy to read.
