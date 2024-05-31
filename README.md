@@ -1,69 +1,46 @@
-# Movie-Store-API-Automation-Testing-Project
+## 🎬Movie-Store-API-Automation-Testing-Project🎥
 
-Welcome to the My Node.js Application! This project is designed as a simple Node.js application with implemented GitHub workflow, tests developed in Postman, Newman running a collection. Below you'll find instructions for setting up and running the project, using Postman for API testing, Newman for automated tests, and details on the GitHub workflow for CI/CD.
+Welcome to the My Node.js Application! This project is designed as a simple application with implemented GitHub workflow, tests developed in Postman and Newman running a collection. Below you'll find instructions for setting up and running the project, using Postman for API testing, Newman for automated tests, and details on the GitHub workflow for CI/CD.
 
-## Table of Contents
+### 📑Table of Contents
+1. Installation
+2. Running the Application
+2. GitHub Workflow
 
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Using Postman](#using-postman)
+### 1. 🛠Installation
 
-## Prerequisites
+1.1. Clone the repository:
+```
+git clone https://github.com/ModJuska123/Movie-Store-API-Automation-Testing-Project
+```
 
-Before you begin, ensure you have the following installed on your system:
+1.2. Navigate to the project directory:
+```
+cd your-repo-name
+```
 
-- [Node.js](https://nodejs.org/) (version 18.x or later)
-- [npm](https://www.npmjs.com/get-npm) (Node Package Manager)
-- [Postman](https://www.postman.com/) (for API testing)
+1.3. Install the dependencies:
+```
+npm install -y
+```
 
-## Installation
+### 🚀2. Running the Application
 
-1. Clone the repository:
+2.1. To start application:
+```
+npm run dev
+```
 
-    
-    git clone https://github.com/your-username/your-repo-name.git
-    
+2.2. Testing the application:
+```
+npm run test
+```
 
-2. Navigate to the project directory:
+### 🧪3. Using Postman
 
-    
-    cd your-repo-name
-    
+Postman is used for API testing in this project. Make sure to have Postman installed on your system to run tests effectively.
 
-3. Install the dependencies:
-
-    
-    npm install
-    
-
-## Running the Application
-
-To start and testing the application:
-
-    npm run dev
-
-    npm run test
-
-## Automated Testing with Newman
-
-Newman allows you to run Postman collections from the command line. Follow these steps to run automated tests:
-
-1. Install Newman globally:
-
-    
-    npm install -g newman
-    
-
-2. Run the Postman collection with Newman:
-
-    
-    newman run postman/collection.json -e postman/environment.json
-    
-
-## GitHub Workflow
-
-This project uses GitHub Actions for CI/CD. The workflow is defined in `.github/workflows/node.js.yml`. Here’s a brief overview:
-
-- **Node.js CI**: This workflow runs on push and pull request events to the `main` branch.
-- It installs dependencies, runs tests, and lints the code.
+### 🔄3. GitHub Workflow
+This project uses GitHub Actions for CI/CD. The workflow is defined in .github/workflows/node.js.yml. Here’s a brief overview:
+Node.js CI: This workflow runs on push and pull request events to the main branch.
+It installs dependencies, runs tests, and lints the code.
