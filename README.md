@@ -4,24 +4,15 @@ Welcome to the My Node.js Application! This project is designed as a simple Node
 
 ## Table of Contents
 
-- [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Running the Application](#running-the-application)
 - [Using Postman](#using-postman)
-
-## Prerequisites
-
-Before you begin, ensure you have the following installed on your system:
-
-- [Node.js](https://nodejs.org/) (version 18.x or later)
-- [npm](https://www.npmjs.com/get-npm) (Node Package Manager)
-- [Postman](https://www.postman.com/) (for API testing)
 
 ## Installation
 
 1. Clone the repository:
 
-git clone https://github.com/ModJuska123/Movie-Store-API-Automation-Testing-Project
+```git clone https://github.com/ModJuska123/Movie-Store-API-Automation-Testing-Project```
     
 
 2. Navigate to the project directory:
